@@ -274,9 +274,9 @@ while run:
             speedY = -1
           if event.key == pygame.K_s:
             speedY = 1
-          if event.key == pygame.K_PLUS:
-            health += 1
           if event.key == pygame.K_EQUALS:
+            health += 1
+          if event.key == pygame.K_MINUS:
             health -= 1
         if event.type == pygame.KEYUP:
           if event.key == pygame.K_a or event.key == pygame.K_LEFT:
@@ -292,7 +292,7 @@ while run:
     display.blit(bottom_right_earth_map, (955, 345))
     display.blit(top_left_earth_map, (330, 110))
     display.blit(top_right_earth_map, (955, 110))
-    display.blit(black_blade_tank, (positionX, positionY))
+    display.blit(white_default_tank, (positionX, positionY))
     display.blit(gold_bullet_one, (positionX + 10, positionY - 15))
     display.blit(f_hb[health],(positionX, positionY - 15))
     positionX += speedX
