@@ -1,6 +1,10 @@
 import pygame
+import pygame.draw_py
 pygame.init()
+pygame.font.init()
+font1 = pygame.font.SysFont("Lexend", 40)
 display = pygame.display.set_mode((1920, 1080))
+gamestatus = 0
 speedX = 0
 speedY = 0
 Speed1 = 1
@@ -9,6 +13,27 @@ positionY = 700
 health = 40
 healthtype = 1
 bullettype = 1
+level = 1-100
+colors = {"Red": "#ff0000",
+"Orange": "#ff9600",
+"Yellow": "#fff000",
+"Green": "#22ff00",
+"Teal": "#00ffff",
+"Blue": "#0030ff",
+"Purple": "#8c00ff",
+"Pink": "#fc00ff",
+"Brown": "#884a00",
+"White": "#eeeeee",
+"Black": "#444444",
+"Bronze": "#b55a00",
+"Light Bronze": "#cd7f32",
+"Silver": "#777777",
+"Light Silver": "#c0c0c0",
+"Gold": "#ffc300",
+"Light Gold": "#ffe290",
+"Diamond": "#99ebff",
+"Light Diamond": "#b9f2ff",
+}
 
 red_blade_tank = pygame.image.load("Images/Tanks/BladeTanks/RedBladeTank.png")
 red_blade_tank = pygame.transform.scale(red_blade_tank, (30, 30))
@@ -436,15 +461,26 @@ while run:
             speedY = 0
           if event.key == pygame.K_s:
             speedY = 0
-    display.fill((0, 255, 255))
-    display.blit(bottom_left_earth_map, (330, 345))
-    display.blit(bottom_right_earth_map, (955, 345))
-    display.blit(top_left_earth_map, (330, 110))
-    display.blit(top_right_earth_map, (955, 110))
-    display.blit(purple_spike_tank, (positionX, positionY))
-    bullettype = 1
-    display.blit(purple_bullet_five, (positionX + 10, positionY - 15))
-    display.blit(f_hb[health],(positionX, positionY - 15))
-    positionX += speedX
-    positionY += speedY
+    if gamestatus == 1:
+      display.fill((0, 255, 255))
+      display.blit(bottom_left_earth_map, (330, 345))
+      display.blit(bottom_right_earth_map, (955, 345))
+      display.blit(top_left_earth_map, (330, 110))
+      display.blit(top_right_earth_map, (955, 110))
+      display.blit(purple_spike_tank, (positionX, positionY))
+      bullettype = 1
+      display.blit(purple_bullet_five, (positionX + 10, positionY - 15))
+      display.blit(f_hb[health],(positionX, positionY - 15))
+      positionX += speedX
+      positionY += speedY
+    else:
+      display.fill((255, 255, 255))
+      pygame.draw.rect(display, pygame.Color(colors["Gold"]), (0, 0, 960, 972))
+      pygame.draw.rect(display, pygame.Color(colors["Diamond"]), (960, 0, 960, 972))
+      pygame.draw.rect(display, pygame.Color(colors["Blue"]), (325, 350, 200, 400))
+      pygame.draw.rect(display, pygame.Color(colors["Green"]), (625, 350, 200, 400))
+      text1 = font1.render("PLAY SOLO", False, pygame.Color(colors["White"]))
+      text2 = font1.render("PLAY SQUADS", False, pygame.Color(colors["White"]))
+      display.blit(text1, (348, 525))
+      display.blit(text2, (627, 525))
     pygame.display.flip()
