@@ -523,6 +523,56 @@ while run:
             speedY = 0
           if event.key == pygame.K_s:
             speedY = 0
+          if event.type == pygame.MOUSEBUTTONDOWN:
+            pos = pygame.mouse.get_pos()
+            if pos[0] >= 325 and pos[0] <= 525 and pos[1] >= 350 and pos[1] <= 750:
+
+            if pos[0] >= 625 and pos[0] <= 825 and pos[1] >= 350 and pos[1] <= 750:
+            
+            if pos[0] >= 1010 and pos[0] <= 1160 and pos[1] >= 150 and pos[1] <= 300:
+
+            if pos[0] >= 1180 and pos[0] <= 1330 and pos[1] >= 150 and pos[1] <= 300:
+
+            if pos[0] >= 1350 and pos[0] <= 1500 and pos[1] >= 150 and pos[1] <= 300:
+
+            if pos[0] >= 1520 and pos[0] <= 1670 and pos[1] >= 150 and pos[1] <= 300:
+
+            if pos[0] >= 1010 and pos[0] <= 1160 and pos[1] >= 320 and pos[1] <= 470:
+
+            if pos[0] >= 1180 and pos[0] <= 1330 and pos[1] >= 320 and pos[1] <= 470:
+
+            if pos[0] >= 1350 and pos[0] <= 1500 and pos[1] >= 320 and pos[1] <= 470:
+
+            ||if pos[0] >= 1125 and pos[0] <= 1195 and pos[1] >= 650 and pos[1] <= 720:
+
+            if pos[0] >= 1215 and pos[0] <= 1285 and pos[1] >= 650 and pos[1] <= 720:
+
+            if pos[0] >= 1305 and pos[0] <= 1375 and pos[1] >= 650 and pos[1] <= 720:
+
+            if pos[0] >= 1395 and pos[0] <= 1465 and pos[1] >= 650 and pos[1] <= 720:
+
+            if pos[0] >= 1485 and pos[0] <= 1555 and pos[1] >= 650 and pos[1] <= 720:
+
+            if pos[0] >= 1125 and pos[0] <= 1195 and pos[1] >= 740 and pos[1] <= 810:
+
+            if pos[0] >= 1215 and pos[0] <= 1285 and pos[1] >= 740 and pos[1] <= 810:
+
+            if pos[0] >= 1305 and pos[0] <= 1375 and pos[1] >= 740 and pos[1] <= 810:
+
+            if pos[0] >= 1395 and pos[0] <= 1465 and pos[1] >= 740 and pos[1] <= 810:
+
+            if pos[0] >= 1485 and pos[0] <= 1555 and pos[1] >= 740 and pos[1] <= 810:
+
+            if pos[0] >= 1125 and pos[0] <= 1195 and pos[1] >= 830 and pos[1] <= 900:
+
+            if pos[0] >= 1215 and pos[0] <= 1285 and pos[1] >= 830 and pos[1] <= 900:
+
+            if pos[0] >= 1305 and pos[0] <= 1375 and pos[1] >= 830 and pos[1] <= 900:
+
+            if pos[0] >= 1395 and pos[0] <= 1465 and pos[1] >= 830 and pos[1] <= 900:
+
+            if pos[0] >= 1485 and pos[0] <= 1555 and pos[1] >= 830 and pos[1] <= 900:
+
     if gamestatus == 1:
       display.fill((0, 255, 255))
       display.blit(bottom_left_earth_map, (330, 345))
