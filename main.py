@@ -403,6 +403,8 @@ gold_modern_gun = pygame.transform.scale(gold_modern_gun, (200, 200))
 diamond_modern_gun = pygame.image.load("Guns/ModernGuns/DiamondModernGun.png")
 diamond_modern_gun = pygame.transform.scale(diamond_modern_gun, (200, 200))
 
+equippedgun = red_default_gun
+
 f_hb_0 = pygame.image.load("HealthBars/FirstHealthBar-0.png")
 f_hb_0 = pygame.transform.scale(f_hb_0, (30, 30))
 f_hb_1 = pygame.image.load("HealthBars/FirstHealthBar-1.png")
@@ -526,52 +528,53 @@ while run:
           if event.type == pygame.MOUSEBUTTONDOWN:
             pos = pygame.mouse.get_pos()
             if pos[0] >= 325 and pos[0] <= 525 and pos[1] >= 350 and pos[1] <= 750:
-
+              print("Solo Game")
             if pos[0] >= 625 and pos[0] <= 825 and pos[1] >= 350 and pos[1] <= 750:
-            
+              print("Squads Game")
             if pos[0] >= 1010 and pos[0] <= 1160 and pos[1] >= 150 and pos[1] <= 300:
-
+              equippedgun = red_default_gun
             if pos[0] >= 1180 and pos[0] <= 1330 and pos[1] >= 150 and pos[1] <= 300:
-
+              equippedgun = red_short_gun
             if pos[0] >= 1350 and pos[0] <= 1500 and pos[1] >= 150 and pos[1] <= 300:
-
+              equippedgun = red_long_gun
             if pos[0] >= 1520 and pos[0] <= 1670 and pos[1] >= 150 and pos[1] <= 300:
-
+              equippedgun = red_spike_gun
             if pos[0] >= 1010 and pos[0] <= 1160 and pos[1] >= 320 and pos[1] <= 470:
-
+              equippedgun = red_blade_gun
             if pos[0] >= 1180 and pos[0] <= 1330 and pos[1] >= 320 and pos[1] <= 470:
-
+              equippedgun = red_ancient_gun
             if pos[0] >= 1350 and pos[0] <= 1500 and pos[1] >= 320 and pos[1] <= 470:
-
-            ||if pos[0] >= 1125 and pos[0] <= 1195 and pos[1] >= 650 and pos[1] <= 720:
-
+              equippedgun = red_modern_gun
+            if pos[0] >= 1125 and pos[0] <= 1195 and pos[1] >= 650 and pos[1] <= 720:
+              equippedgun = red_default_gun
             if pos[0] >= 1215 and pos[0] <= 1285 and pos[1] >= 650 and pos[1] <= 720:
-
+              equippedgun = orange_default_gun
             if pos[0] >= 1305 and pos[0] <= 1375 and pos[1] >= 650 and pos[1] <= 720:
-
+              equippedgun = yellow_default_gun
             if pos[0] >= 1395 and pos[0] <= 1465 and pos[1] >= 650 and pos[1] <= 720:
-
+              equippedgun = green_default_gun
             if pos[0] >= 1485 and pos[0] <= 1555 and pos[1] >= 650 and pos[1] <= 720:
-
+              equippedgun = teal_default_gun
             if pos[0] >= 1125 and pos[0] <= 1195 and pos[1] >= 740 and pos[1] <= 810:
-
+              equippedgun = blue_default_gun
             if pos[0] >= 1215 and pos[0] <= 1285 and pos[1] >= 740 and pos[1] <= 810:
-
+              equippedgun = purple_default_gun
             if pos[0] >= 1305 and pos[0] <= 1375 and pos[1] >= 740 and pos[1] <= 810:
-
+              equippedgun = pink_default_gun
             if pos[0] >= 1395 and pos[0] <= 1465 and pos[1] >= 740 and pos[1] <= 810:
-
+              equippedgun = brown_default_gun
             if pos[0] >= 1485 and pos[0] <= 1555 and pos[1] >= 740 and pos[1] <= 810:
-
+              equippedgun = white_default_gun
             if pos[0] >= 1125 and pos[0] <= 1195 and pos[1] >= 830 and pos[1] <= 900:
-
+              equippedgun = black_default_gun
             if pos[0] >= 1215 and pos[0] <= 1285 and pos[1] >= 830 and pos[1] <= 900:
-
+              equippedgun = bronze_default_gun
             if pos[0] >= 1305 and pos[0] <= 1375 and pos[1] >= 830 and pos[1] <= 900:
-
+              equippedgun = silver_default_gun
             if pos[0] >= 1395 and pos[0] <= 1465 and pos[1] >= 830 and pos[1] <= 900:
-
+              equippedgun = gold_default_gun
             if pos[0] >= 1485 and pos[0] <= 1555 and pos[1] >= 830 and pos[1] <= 900:
+              equippedgun = diamond_default_gun
 
     if gamestatus == 1:
       display.fill((0, 255, 255))
@@ -589,8 +592,9 @@ while run:
       display.fill((255, 255, 255))
       pygame.draw.rect(display, pygame.Color(colors["Gold"]), (0, 0, 960, 972))
       pygame.draw.rect(display, pygame.Color(colors["Diamond"]), (960, 0, 960, 972))
-      pygame.draw.rect(display, pygame.Color(0, 0, 0), (320, 345, 210, 410))
-      pygame.draw.rect(display, pygame.Color(0, 0, 0), (620, 345, 210, 410))
+      pygame.draw.rect(display, pygame.Color(0, 0, 0), (220, 345, 210, 410))
+      pygame.draw.rect(display, pygame.Color(0, 0, 0), (470, 345, 210, 410))
+      pygame.draw.rect(display, pygame.Color(0, 0, 0), (720, 345, 210, 410))
       pygame.draw.rect(display, pygame.Color(0, 0, 0), (1005, 145, 160, 160))
       pygame.draw.rect(display, pygame.Color(0, 0, 0), (1175, 145, 160, 160))
       pygame.draw.rect(display, pygame.Color(0, 0, 0), (1345, 145, 160, 160))
@@ -599,8 +603,9 @@ while run:
       pygame.draw.rect(display, pygame.Color(0, 0, 0), (1175, 315, 160, 160))
       pygame.draw.rect(display, pygame.Color(0, 0, 0), (1345, 315, 160, 160))
       pygame.draw.rect(display, pygame.Color(0, 0, 0), (1005, 485, 670, 465))
-      pygame.draw.rect(display, pygame.Color(colors["Blue"]), (325, 350, 200, 400))
-      pygame.draw.rect(display, pygame.Color(colors["Green"]), (625, 350, 200, 400))
+      pygame.draw.rect(display, pygame.Color(colors["Blue"]), (225, 350, 200, 400))
+      pygame.draw.rect(display, pygame.Color(colors["Yellow"]), (475, 350, 200, 400))
+      pygame.draw.rect(display, pygame.Color(colors["Green"]), (725, 350, 200, 400))
       pygame.draw.rect(display, pygame.Color(colors["Bronze"]), (1010, 150, 150, 150))
       pygame.draw.rect(display, pygame.Color(colors["Bronze"]), (1180, 150, 150, 150))
       pygame.draw.rect(display, pygame.Color(colors["Bronze"]), (1350, 150, 150, 150))
@@ -640,9 +645,11 @@ while run:
       pygame.draw.rect(display, pygame.Color(colors["Gold"]), (1395, 830, 70, 70))
       pygame.draw.rect(display, pygame.Color(colors["Diamond"]), (1485, 830, 70, 70))
       text1 = font1.render("PLAY SOLO", False, pygame.Color(colors["White"]))
-      text2 = font1.render("PLAY SQUADS", False, pygame.Color(colors["White"]))
-      display.blit(text1, (348, 525))
-      display.blit(text2, (627, 525))
+      text2 = font1.render("PLAY RANKED", False, pygame.Color(colors["White"]))
+      text3 = font1.render("PLAY SQUADS", False, pygame.Color(colors["White"]))
+      display.blit(text1, (250, 525))
+      display.blit(text2, (475, 525))
+      display.blit(text3, (725, 525))
       display.blit(red_default_gun, (985, 130))
       display.blit(red_short_gun, (1155, 130))
       display.blit(red_long_gun, (1325, 130))
@@ -650,6 +657,5 @@ while run:
       display.blit(red_blade_gun, (985, 300))
       display.blit(red_ancient_gun, (1155, 300))
       display.blit(red_modern_gun, (1325, 300))
-
-      display.blit(gold_blade_gun, (1250, 470))
+      display.blit(equippedgun, (1250, 470))
     pygame.display.flip()
