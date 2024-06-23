@@ -525,11 +525,13 @@ while run:
             speedY = 0
           if event.key == pygame.K_s:
             speedY = 0
-          if event.type == pygame.MOUSEBUTTONDOWN:
+        if event.type == pygame.MOUSEBUTTONUP:
             pos = pygame.mouse.get_pos()
-            if pos[0] >= 325 and pos[0] <= 525 and pos[1] >= 350 and pos[1] <= 750:
+            if pos[0] >= 225 and pos[0] <= 525 and pos[1] >= 350 and pos[1] <= 750:
               print("Solo Game")
-            if pos[0] >= 625 and pos[0] <= 825 and pos[1] >= 350 and pos[1] <= 750:
+            if pos[0] >= 475 and pos[0] <= 825 and pos[1] >= 350 and pos[1] <= 750:
+              print("Ranked Game")
+            if pos[0] >= 725 and pos[0] <= 825 and pos[1] >= 350 and pos[1] <= 750:
               print("Squads Game")
             if pos[0] >= 1010 and pos[0] <= 1160 and pos[1] >= 150 and pos[1] <= 300:
               equippedgun = red_default_gun
