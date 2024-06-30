@@ -13,6 +13,7 @@ positionY = 700
 health = 40
 healthtype = 1
 bullettype = 1
+equippedguntype = 1
 level = 1-100
 colors = {"Red": "#ff0000",
 "Orange": "#ff9600",
@@ -534,49 +535,251 @@ while run:
             if pos[0] >= 725 and pos[0] <= 825 and pos[1] >= 350 and pos[1] <= 750:
               print("Squads Game")
             if pos[0] >= 1010 and pos[0] <= 1160 and pos[1] >= 150 and pos[1] <= 300:
+              equippedguntype = 1
               equippedgun = red_default_gun
             if pos[0] >= 1180 and pos[0] <= 1330 and pos[1] >= 150 and pos[1] <= 300:
+              equippedguntype = 2
               equippedgun = red_short_gun
             if pos[0] >= 1350 and pos[0] <= 1500 and pos[1] >= 150 and pos[1] <= 300:
+              equippedguntype = 3
               equippedgun = red_long_gun
             if pos[0] >= 1520 and pos[0] <= 1670 and pos[1] >= 150 and pos[1] <= 300:
+              equippedguntype = 4
               equippedgun = red_spike_gun
             if pos[0] >= 1010 and pos[0] <= 1160 and pos[1] >= 320 and pos[1] <= 470:
+              equippedguntype = 5
               equippedgun = red_blade_gun
             if pos[0] >= 1180 and pos[0] <= 1330 and pos[1] >= 320 and pos[1] <= 470:
+              equippedguntype = 6
               equippedgun = red_ancient_gun
             if pos[0] >= 1350 and pos[0] <= 1500 and pos[1] >= 320 and pos[1] <= 470:
+              equippedguntype = 7
               equippedgun = red_modern_gun
             if pos[0] >= 1125 and pos[0] <= 1195 and pos[1] >= 650 and pos[1] <= 720:
-              equippedgun = red_default_gun
+              if equippedguntype == 1:
+                equippedgun = red_default_gun
+              elif equippedguntype == 2:
+                equippedgun = red_short_gun
+              elif equippedguntype == 3:
+                equippedgun = red_long_gun
+              elif equippedguntype == 4:
+                equippedgun = red_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = red_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = red_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = red_modern_gun
             if pos[0] >= 1215 and pos[0] <= 1285 and pos[1] >= 650 and pos[1] <= 720:
-              equippedgun = orange_default_gun
+              if equippedguntype == 1:
+                equippedgun = orange_default_gun
+              elif equippedguntype == 2:
+                equippedgun = orange_short_gun
+              elif equippedguntype == 3:
+                equippedgun = orange_long_gun
+              elif equippedguntype == 4:
+                equippedgun = orange_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = orange_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = orange_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = orange_modern_gun
             if pos[0] >= 1305 and pos[0] <= 1375 and pos[1] >= 650 and pos[1] <= 720:
-              equippedgun = yellow_default_gun
+              if equippedguntype == 1:
+                equippedgun = yellow_default_gun
+              elif equippedguntype == 2:
+                equippedgun = yellow_short_gun
+              elif equippedguntype == 3:
+                equippedgun = yellow_long_gun
+              elif equippedguntype == 4:
+                equippedgun = yellow_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = yellow_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = yellow_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = yellow_modern_gun
             if pos[0] >= 1395 and pos[0] <= 1465 and pos[1] >= 650 and pos[1] <= 720:
-              equippedgun = green_default_gun
+              if equippedguntype == 1:
+                equippedgun = green_default_gun
+              elif equippedguntype == 2:
+                equippedgun = green_short_gun
+              elif equippedguntype == 3:
+                equippedgun = green_long_gun
+              elif equippedguntype == 4:
+                equippedgun = green_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = green_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = green_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = green_modern_gun
             if pos[0] >= 1485 and pos[0] <= 1555 and pos[1] >= 650 and pos[1] <= 720:
-              equippedgun = teal_default_gun
+              if equippedguntype == 1:
+                equippedgun = teal_default_gun
+              elif equippedguntype == 2:
+                equippedgun = teal_short_gun
+              elif equippedguntype == 3:
+                equippedgun = teal_long_gun
+              elif equippedguntype == 4:
+                equippedgun = teal_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = teal_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = teal_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = teal_modern_gun
             if pos[0] >= 1125 and pos[0] <= 1195 and pos[1] >= 740 and pos[1] <= 810:
-              equippedgun = blue_default_gun
+              if equippedguntype == 1:
+                equippedgun = blue_default_gun
+              elif equippedguntype == 2:
+                equippedgun = blue_short_gun
+              elif equippedguntype == 3:
+                equippedgun = blue_long_gun
+              elif equippedguntype == 4:
+                equippedgun = blue_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = blue_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = blue_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = blue_modern_gun
             if pos[0] >= 1215 and pos[0] <= 1285 and pos[1] >= 740 and pos[1] <= 810:
-              equippedgun = purple_default_gun
+              if equippedguntype == 1:
+                equippedgun = purple_default_gun
+              elif equippedguntype == 2:
+                equippedgun = purple_short_gun
+              elif equippedguntype == 3:
+                equippedgun = purple_long_gun
+              elif equippedguntype == 4:
+                equippedgun = purple_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = purple_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = purple_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = purple_modern_gun
             if pos[0] >= 1305 and pos[0] <= 1375 and pos[1] >= 740 and pos[1] <= 810:
-              equippedgun = pink_default_gun
+              if equippedguntype == 1:
+                equippedgun = pink_default_gun
+              elif equippedguntype == 2:
+                equippedgun = pink_short_gun
+              elif equippedguntype == 3:
+                equippedgun = pink_long_gun
+              elif equippedguntype == 4:
+                equippedgun = pink_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = pink_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = pink_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = pink_modern_gun
             if pos[0] >= 1395 and pos[0] <= 1465 and pos[1] >= 740 and pos[1] <= 810:
-              equippedgun = brown_default_gun
+              if equippedguntype == 1:
+                equippedgun = brown_default_gun
+              elif equippedguntype == 2:
+                equippedgun = brown_short_gun
+              elif equippedguntype == 3:
+                equippedgun = brown_long_gun
+              elif equippedguntype == 4:
+                equippedgun = brown_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = brown_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = brown_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = brown_modern_gun
             if pos[0] >= 1485 and pos[0] <= 1555 and pos[1] >= 740 and pos[1] <= 810:
-              equippedgun = white_default_gun
+              if equippedguntype == 1:
+                equippedgun = white_default_gun
+              elif equippedguntype == 2:
+                equippedgun = white_short_gun
+              elif equippedguntype == 3:
+                equippedgun = white_long_gun
+              elif equippedguntype == 4:
+                equippedgun = white_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = white_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = white_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = white_modern_gun
             if pos[0] >= 1125 and pos[0] <= 1195 and pos[1] >= 830 and pos[1] <= 900:
-              equippedgun = black_default_gun
+              if equippedguntype == 1:
+                equippedgun = black_default_gun
+              elif equippedguntype == 2:
+                equippedgun = black_short_gun
+              elif equippedguntype == 3:
+                equippedgun = black_long_gun
+              elif equippedguntype == 4:
+                equippedgun = black_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = black_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = black_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = black_modern_gun
             if pos[0] >= 1215 and pos[0] <= 1285 and pos[1] >= 830 and pos[1] <= 900:
-              equippedgun = bronze_default_gun
+              if equippedguntype == 1:
+                equippedgun = bronze_default_gun
+              elif equippedguntype == 2:
+                equippedgun = bronze_short_gun
+              elif equippedguntype == 3:
+                equippedgun = bronze_long_gun
+              elif equippedguntype == 4:
+                equippedgun = bronze_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = bronze_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = bronze_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = bronze_modern_gun
             if pos[0] >= 1305 and pos[0] <= 1375 and pos[1] >= 830 and pos[1] <= 900:
-              equippedgun = silver_default_gun
+              if equippedguntype == 1:
+                equippedgun = silver_default_gun
+              elif equippedguntype == 2:
+                equippedgun = silver_short_gun
+              elif equippedguntype == 3:
+                equippedgun = silver_long_gun
+              elif equippedguntype == 4:
+                equippedgun = silver_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = silver_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = silver_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = silver_modern_gun
             if pos[0] >= 1395 and pos[0] <= 1465 and pos[1] >= 830 and pos[1] <= 900:
-              equippedgun = gold_default_gun
+              if equippedguntype == 1:
+                equippedgun = gold_default_gun
+              elif equippedguntype == 2:
+                equippedgun = gold_short_gun
+              elif equippedguntype == 3:
+                equippedgun = gold_long_gun
+              elif equippedguntype == 4:
+                equippedgun = gold_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = gold_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = gold_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = gold_modern_gun
             if pos[0] >= 1485 and pos[0] <= 1555 and pos[1] >= 830 and pos[1] <= 900:
-              equippedgun = diamond_default_gun
+              if equippedguntype == 1:
+                equippedgun = diamond_default_gun
+              elif equippedguntype == 2:
+                equippedgun = diamond_short_gun
+              elif equippedguntype == 3:
+                equippedgun = diamond_long_gun
+              elif equippedguntype == 4:
+                equippedgun = diamond_spike_gun
+              elif equippedguntype == 5:
+                equippedgun = diamond_blade_gun
+              elif equippedguntype == 6:
+                equippedgun = diamond_ancient_gun
+              elif equippedguntype == 7:
+                equippedgun = diamond_modern_gun
 
     if gamestatus == 1:
       display.fill((0, 255, 255))
