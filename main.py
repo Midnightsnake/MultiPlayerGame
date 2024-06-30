@@ -15,6 +15,8 @@ healthtype = 1
 bullettype = 1
 equippedguntype = 1
 level = 1-100
+DamageGun = 1
+SpeedGun = 1
 colors = {"Red": "#ff0000",
 "Orange": "#ff9600",
 "Yellow": "#fff000",
@@ -537,24 +539,38 @@ while run:
             if pos[0] >= 1010 and pos[0] <= 1160 and pos[1] >= 150 and pos[1] <= 300:
               equippedguntype = 1
               equippedgun = red_default_gun
+              DamageGun = 1
+              SpeedGun = 1
             if pos[0] >= 1180 and pos[0] <= 1330 and pos[1] >= 150 and pos[1] <= 300:
               equippedguntype = 2
               equippedgun = red_short_gun
+              DamageGun = 0.75
+              SpeedGun = 1.25
             if pos[0] >= 1350 and pos[0] <= 1500 and pos[1] >= 150 and pos[1] <= 300:
               equippedguntype = 3
               equippedgun = red_long_gun
+              DamageGun = 1.25
+              SpeedGun = 0.75
             if pos[0] >= 1520 and pos[0] <= 1670 and pos[1] >= 150 and pos[1] <= 300:
               equippedguntype = 4
               equippedgun = red_spike_gun
+              DamageGun = 1.5
+              SpeedGun = 1.25
             if pos[0] >= 1010 and pos[0] <= 1160 and pos[1] >= 320 and pos[1] <= 470:
               equippedguntype = 5
               equippedgun = red_blade_gun
+              DamageGun = 1.25
+              SpeedGun = 1.5
             if pos[0] >= 1180 and pos[0] <= 1330 and pos[1] >= 320 and pos[1] <= 470:
               equippedguntype = 6
               equippedgun = red_ancient_gun
+              DamageGun = 0.5
+              SpeedGun = 2
             if pos[0] >= 1350 and pos[0] <= 1500 and pos[1] >= 320 and pos[1] <= 470:
               equippedguntype = 7
               equippedgun = red_modern_gun
+              DamageGun = 2
+              SpeedGun = 0.5
             if pos[0] >= 1125 and pos[0] <= 1195 and pos[1] >= 650 and pos[1] <= 720:
               if equippedguntype == 1:
                 equippedgun = red_default_gun
@@ -852,9 +868,13 @@ while run:
       text1 = font1.render("PLAY SOLO", False, pygame.Color(colors["White"]))
       text2 = font1.render("PLAY RANKED", False, pygame.Color(colors["White"]))
       text3 = font1.render("PLAY SQUADS", False, pygame.Color(colors["White"]))
+      text4 = font1.render("Damage Buff: X" + str(DamageGun), False, pygame.Color(0, 0, 0))
+      text5 = font1.render("Speed Buff: X" + str(SpeedGun), False, pygame.Color(0, 0, 0))
       display.blit(text1, (250, 525))
       display.blit(text2, (475, 525))
       display.blit(text3, (725, 525))
+      display.blit(text4, (1020, 505))
+      display.blit(text5, (1020, 545))
       display.blit(red_default_gun, (985, 130))
       display.blit(red_short_gun, (1155, 130))
       display.blit(red_long_gun, (1325, 130))
