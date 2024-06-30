@@ -17,6 +17,7 @@ equippedguntype = 1
 level = 1-100
 DamageGun = 1
 SpeedGun = 1
+Cash = 0
 colors = {"Red": "#ff0000",
 "Orange": "#ff9600",
 "Yellow": "#fff000",
