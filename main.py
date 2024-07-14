@@ -19,7 +19,7 @@ homingtype = 1
 ancientbullettype = 1
 flaktype = 1
 equippedguntype = 1
-level = 1-100
+level = 1
 DamageGun = 1
 SpeedGun = 1
 cash = 0
@@ -898,12 +898,7 @@ while run:
       text4 = font1.render("Damage Buff: X" + str(DamageGun), False, pygame.Color(0, 0, 0))
       text5 = font1.render("Speed Buff: X" + str(SpeedGun), False, pygame.Color(0, 0, 0))
       text6 = font1.render("Cash: " + str(cash), False, pygame.Color(0, 0, 0))
-      display.blit(text1, (250, 525))
-      display.blit(text2, (475, 525))
-      display.blit(text3, (725, 525))
-      display.blit(text4, (1020, 505))
-      display.blit(text5, (1020, 545))
-      display.blit(text6, (210, 125))
+      text7 = font1.render(str(level), False, pygame.Color(255, 255, 255))
       display.blit(red_default_gun, (985, 130))
       display.blit(red_short_gun, (1155, 130))
       display.blit(red_long_gun, (1325, 130))
@@ -912,4 +907,12 @@ while run:
       display.blit(red_ancient_gun, (1155, 300))
       display.blit(red_modern_gun, (1325, 300))
       display.blit(equippedgun, (1250, 470))
+      display.blit(levels_ninetyone_hundred, (200, 115))
+      display.blit(text1, (250, 525))
+      display.blit(text2, (475, 525))
+      display.blit(text3, (725, 525))
+      display.blit(text4, (1020, 505))
+      display.blit(text5, (1020, 545))
+      display.blit(text6, (1420, 505))
+      display.blit(text7, (243, 153))
     pygame.display.flip()
