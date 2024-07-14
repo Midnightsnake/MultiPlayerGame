@@ -7,17 +7,22 @@ display = pygame.display.set_mode((1920, 1080))
 gamestatus = 0
 speedX = 0
 speedY = 0
-Speed1 = 1
+speed1 = 1
 positionX = 1000
 positionY = 700
 health = 40
-healthtype = 1
 bullettype = 1
+rapidfiretype = 1
+shieldtype = 1
+nuketype = 1
+homingtype = 1
+ancientbullettype = 1
+flaktype = 1
 equippedguntype = 1
 level = 1-100
 DamageGun = 1
 SpeedGun = 1
-Cash = 0
+cash = 0
 colors = {"Red": "#ff0000",
 "Orange": "#ff9600",
 "Yellow": "#fff000",
@@ -509,9 +514,9 @@ while run:
             run = False
         if event.type == pygame.KEYDOWN:
           if event.key == pygame.K_a or event.key == pygame.K_LEFT:
-            speedX = -Speed1
+            speedX = -speed1
           if event.key == pygame.K_d or event.key == pygame.K_RIGHT:
-            speedX = Speed1
+            speedX = speed1
           if event.key == pygame.K_w:
             speedY = -1
           if event.key == pygame.K_s:
@@ -871,11 +876,13 @@ while run:
       text3 = font1.render("PLAY SQUADS", False, pygame.Color(colors["White"]))
       text4 = font1.render("Damage Buff: X" + str(DamageGun), False, pygame.Color(0, 0, 0))
       text5 = font1.render("Speed Buff: X" + str(SpeedGun), False, pygame.Color(0, 0, 0))
+      text6 = font1.render("Cash: " + str(cash), False, pygame.Color(0, 0, 0))
       display.blit(text1, (250, 525))
       display.blit(text2, (475, 525))
       display.blit(text3, (725, 525))
       display.blit(text4, (1020, 505))
       display.blit(text5, (1020, 545))
+      display.blit(text6, (210, 125))
       display.blit(red_default_gun, (985, 130))
       display.blit(red_short_gun, (1155, 130))
       display.blit(red_long_gun, (1325, 130))
