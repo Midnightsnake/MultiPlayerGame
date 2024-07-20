@@ -26,6 +26,10 @@ DamageGun = 1
 SpeedGun = 1
 signing_up = False
 logging_in = False
+username_text = ""
+password_text = ""
+username_typing = False
+password_typing = False
 cash = 0
 colors = {"Red": "#ff0000",
 "Orange": "#ff9600",
@@ -550,6 +554,8 @@ while run:
             health += 1
           if event.key == pygame.K_MINUS:
             health -= 1
+          if username_typing == True:
+            username_text += event.unicode
         if event.type == pygame.KEYUP:
           if event.key == pygame.K_a or event.key == pygame.K_LEFT:
             speedX = 0
@@ -833,6 +839,10 @@ while run:
             if pos[0] >= 445 and pos[0] <= 540 and pos[1] >= 140 and pos[1] <= 190:
               logging_in = True
               signing_up = False
+            if pos[0] >= 550 and pos[0] <= 950 and pos[1] >= 140 and pos[1] <= 290:
+              username_typing = True
+            else:
+              username_typing = False
     if gamestatus == 1:
       display.fill((0, 255, 255))
       display.blit(bottom_left_earth_map, (330, 345))
@@ -936,6 +946,8 @@ while run:
       if signing_up == True:
         pygame.draw.rect(display, pygame.Color(colors["Bronze"]), (550, 140, 400, 150))
         pygame.draw.rect(display, pygame.Color(colors["Red"]), (550, 140, 50, 50))
+        text_surface = font1.render(username_text, True, (0, 0, 0))
+        display.blit(text_surface, (550, 140))
       if logging_in == True:
         pygame.draw.rect(display, pygame.Color(colors["Silver"]), (550, 140, 400, 150))
         pygame.draw.rect(display, pygame.Color(colors["Red"]), (550, 140, 50, 50))
