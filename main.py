@@ -3,6 +3,9 @@ import pygame.draw_py
 pygame.init()
 pygame.font.init()
 font1 = pygame.font.SysFont("Lexend", 40)
+font2 = pygame.font.SysFont("Lexend", 30)
+font3 = pygame.font.SysFont("Lexend", 20)
+font4 = pygame.font.SysFont("Lexend", 65)
 display = pygame.display.set_mode((1920, 1080))
 gamestatus = 0
 speedX = 0
@@ -28,8 +31,12 @@ signing_up = False
 logging_in = False
 username_text = ""
 password_text = ""
+username_text2 = ""
+password_text2 = ""
 username_typing = False
 password_typing = False
+username_typing2 = False
+password_typing2 = False
 cash = 0
 colors = {"Red": "#ff0000",
 "Orange": "#ff9600",
@@ -555,7 +562,29 @@ while run:
           if event.key == pygame.K_MINUS:
             health -= 1
           if username_typing == True:
-            username_text += event.unicode
+            if event.key == pygame.K_BACKSPACE:
+              username_text = username_text[:-1]
+            else:
+              if len(username_text) < 15:
+                username_text += event.unicode
+          if password_typing == True:
+            if event.key == pygame.K_BACKSPACE:
+              password_text = password_text[:-1]
+            else:
+              if len(password_text) < 15:
+                password_text += event.unicode
+          if username_typing2 == True:
+            if event.key == pygame.K_BACKSPACE:
+              username_text2 = username_text2[:-1]
+            else:
+              if len(username_text2) < 15:
+                username_text2 += event.unicode
+          if password_typing2 == True:
+            if event.key == pygame.K_BACKSPACE:
+              password_text2 = password_text2[:-1]
+            else:
+              if len(password_text2) < 15:
+                password_text2 += event.unicode
         if event.type == pygame.KEYUP:
           if event.key == pygame.K_a or event.key == pygame.K_LEFT:
             speedX = 0
@@ -836,13 +865,44 @@ while run:
             if pos[0] >= 315 and pos[0] <= 435 and pos[1] >= 140 and pos[1] <= 190:
               signing_up = True
               logging_in = False
+              username_text = ""
+              password_text = ""
+              username_typing = False
+              password_typing = False
             if pos[0] >= 445 and pos[0] <= 540 and pos[1] >= 140 and pos[1] <= 190:
               logging_in = True
-              signing_up = False
-            if pos[0] >= 550 and pos[0] <= 950 and pos[1] >= 140 and pos[1] <= 290:
+              signing_up == False
+              username_text2 = ""
+              password_text2 = ""
+              username_typing2 = False
+              password_typing2 = False
+            if pos[0] >= 615 and pos[0] <= 885 and pos[1] >= 185 and pos[1] <= 215 and signing_up == True:
               username_typing = True
             else:
               username_typing = False
+            if pos[0] >= 615 and pos[0] <= 885 and pos[1] >= 235 and pos[1] <= 265 and signing_up == True:
+              password_typing = True
+            else:
+              password_typing = False
+            if pos[0] >= 615 and pos[0] <= 885 and pos[1] >= 185 and pos[1] <= 215 and logging_in == True:
+              username_typing2 = True
+            else:
+              username_typing2 = False
+            if pos[0] >= 615 and pos[0] <= 885 and pos[1] >= 235 and pos[1] <= 265 and logging_in == True:
+              password_typing2 = True
+            else:
+              password_typing2 = False
+            if pos[0] >= 550 and pos[0] <= 600 and pos[1] >= 140 and pos[1] <= 190 and logging_in == True:
+              logging_in = False
+              username_text2 = ""
+              password_text2 = ""
+              username_typing2 = False
+              password_typing2 = False
+              signing_up = False
+              username_text = ""
+              password_text = ""
+              username_typing = False
+              password_typing = False
     if gamestatus == 1:
       display.fill((0, 255, 255))
       display.blit(bottom_left_earth_map, (330, 345))
@@ -923,6 +983,9 @@ while run:
       text8 = font1.render("Sign Up", False, (0, 0, 0))
       text9 = font1.render("Log In", False, (0, 0, 0))
       text10 = font1.render("You must be signed in to play a game!", False, (0, 0, 0))
+      text11 = font3.render("Username", False, (255, 255, 255))
+      text12 = font3.render("Password", False, (255, 255, 255))
+      text13 = font4.render("X", False, (255, 255, 255))
       display.blit(red_default_gun, (985, 130))
       display.blit(red_short_gun, (1155, 130))
       display.blit(red_long_gun, (1325, 130))
@@ -946,11 +1009,25 @@ while run:
       if signing_up == True:
         pygame.draw.rect(display, pygame.Color(colors["Bronze"]), (550, 140, 400, 150))
         pygame.draw.rect(display, pygame.Color(colors["Red"]), (550, 140, 50, 50))
-        text_surface = font1.render(username_text, True, (0, 0, 0))
+        pygame.draw.rect(display, pygame.Color(colors["Black"]), (615, 185, 270, 30))
+        pygame.draw.rect(display, pygame.Color(colors["Black"]), (615, 235, 270, 30))
+        text_surface = font2.render(username_text, True, (255, 255, 255))
+        text_surface2 = font2.render(password_text, True, (255, 255, 255))
         display.blit(text_surface, (620, 190))
+        display.blit(text_surface2, (620, 240))
+        display.blit(text11, (615, 170))
+        display.blit(text12, (615, 220))
+        display.blit(text13, (560, 145))
       if logging_in == True:
         pygame.draw.rect(display, pygame.Color(colors["Silver"]), (550, 140, 400, 150))
         pygame.draw.rect(display, pygame.Color(colors["Red"]), (550, 140, 50, 50))
-        text_surface2 = font1.render(username_text, True, (0, 0, 0))
-        display.blit(text_surface2, (620, 190))
+        pygame.draw.rect(display, pygame.Color(colors["Black"]), (615, 185, 270, 30))
+        pygame.draw.rect(display, pygame.Color(colors["Black"]), (615, 235, 270, 30))
+        text_surface3 = font2.render(username_text2, True, (255, 255, 255))
+        text_surface4 = font2.render(password_text2, True, (255, 255, 255))
+        display.blit(text_surface3, (620, 190))
+        display.blit(text_surface4, (620, 240))
+        display.blit(text11, (615, 170))
+        display.blit(text12, (615, 220))
+        display.blit(text13, (560, 145))
     pygame.display.flip()
