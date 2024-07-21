@@ -947,8 +947,10 @@ while run:
         pygame.draw.rect(display, pygame.Color(colors["Bronze"]), (550, 140, 400, 150))
         pygame.draw.rect(display, pygame.Color(colors["Red"]), (550, 140, 50, 50))
         text_surface = font1.render(username_text, True, (0, 0, 0))
-        display.blit(text_surface, (550, 140))
+        display.blit(text_surface, (620, 190))
       if logging_in == True:
         pygame.draw.rect(display, pygame.Color(colors["Silver"]), (550, 140, 400, 150))
         pygame.draw.rect(display, pygame.Color(colors["Red"]), (550, 140, 50, 50))
+        text_surface2 = font1.render(username_text, True, (0, 0, 0))
+        display.blit(text_surface2, (620, 190))
     pygame.display.flip()
