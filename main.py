@@ -32,14 +32,9 @@ signing_up = False
 logging_in = False
 username_text = ""
 password_text = ""
-username_text2 = ""
-password_text2 = ""
 password_text_hide = ""
-password_text2_hide = ""
 username_typing = False
 password_typing = False
-username_typing2 = False
-password_typing2 = False
 cash = 0
 colors = {"Red": "#ff0000",
 "Orange": "#ff9600",
@@ -578,20 +573,6 @@ while run:
               if len(password_text) < 15:
                 password_text += event.unicode
                 password_text_hide += "*"
-          if username_typing2 == True:
-            if event.key == pygame.K_BACKSPACE:
-              username_text2 = username_text2[:-1]
-            else:
-              if len(username_text2) < 15:
-                username_text2 += event.unicode
-          if password_typing2 == True:
-            if event.key == pygame.K_BACKSPACE:
-              password_text2 = password_text2[:-1]
-              password_text2_hide = password_text2_hide[:-1]
-            else:
-              if len(password_text2) < 15:
-                password_text2 += event.unicode
-                password_text2_hide += "*"
         if event.type == pygame.KEYUP:
           if event.key == pygame.K_a or event.key == pygame.K_LEFT:
             speedX = 0
@@ -869,7 +850,7 @@ while run:
                 equippedgun = diamond_ancient_gun
               elif equippedguntype == 7:
                 equippedgun = diamond_modern_gun
-            if pos[0] >= 315 and pos[0] <= 435 and pos[1] >= 140 and pos[1] <= 190:
+            if pos[0] >= 315 and pos[0] <= 435 and pos[1] >= 140 and pos[1] <= 190 and signed_in == False:
               signing_up = True
               logging_in = False
               username_text = ""
@@ -877,43 +858,30 @@ while run:
               username_typing = False
               password_typing = False
               password_text_hide = ""
-            if pos[0] >= 445 and pos[0] <= 540 and pos[1] >= 140 and pos[1] <= 190:
+            if pos[0] >= 445 and pos[0] <= 540 and pos[1] >= 140 and pos[1] <= 190 and signed_in == False:
               logging_in = True
               signing_up == False
-              username_text2 = ""
-              password_text2 = ""
-              username_typing2 = False
-              password_typing2 = False
-              password_text2_hide = ""
-            if pos[0] >= 615 and pos[0] <= 885 and pos[1] >= 185 and pos[1] <= 215 and signing_up == True:
-              username_typing = True
-            else:
-              username_typing = False
-            if pos[0] >= 615 and pos[0] <= 885 and pos[1] >= 235 and pos[1] <= 265 and signing_up == True:
-              password_typing = True
-            else:
-              password_typing = False
-            if pos[0] >= 615 and pos[0] <= 885 and pos[1] >= 185 and pos[1] <= 215 and logging_in == True:
-              username_typing2 = True
-            else:
-              username_typing2 = False
-            if pos[0] >= 615 and pos[0] <= 885 and pos[1] >= 235 and pos[1] <= 265 and logging_in == True:
-              password_typing2 = True
-            else:
-              password_typing2 = False
-            if pos[0] >= 550 and pos[0] <= 600 and pos[1] >= 140 and pos[1] <= 190 and (logging_in == True or signing_up == True):
-              logging_in = False
-              username_text2 = ""
-              password_text2 = ""
-              username_typing2 = False
-              password_typing2 = False
-              password_text2_hide = ""
-              signing_up = False
               username_text = ""
               password_text = ""
               username_typing = False
               password_typing = False
               password_text_hide = ""
+            if pos[0] >= 615 and pos[0] <= 885 and pos[1] >= 185 and pos[1] <= 215 and (logging_in == True or signing_up == True):
+              username_typing = True
+            else:
+              username_typing = False
+            if pos[0] >= 615 and pos[0] <= 885 and pos[1] >= 235 and pos[1] <= 265 and (logging_in == True or signing_up == True):
+              password_typing = True
+            else:
+              password_typing = False
+            if pos[0] >= 550 and pos[0] <= 600 and pos[1] >= 140 and pos[1] <= 190 and (logging_in == True or signing_up == True):
+              username_text = ""
+              password_text = ""
+              username_typing = False
+              password_typing = False
+              password_text_hide = ""
+              logging_in = False
+              signing_up = False
             if pos[0] >= 890 and pos[0] <= 945 and pos[1] >= 185 and pos[1] <= 265 and (logging_in == True or signing_up == True):
               signed_in = True
     if gamestatus == 1:
@@ -1040,10 +1008,10 @@ while run:
           pygame.draw.rect(display, pygame.Color(colors["Black"]), (615, 185, 270, 30))
           pygame.draw.rect(display, pygame.Color(colors["Black"]), (615, 235, 270, 30))
           pygame.draw.rect(display, pygame.Color(colors["Diamond"]), (890, 185, 55, 80))
-          text_surface3 = font2.render(username_text2, True, (255, 255, 255))
-          text_surface4 = font2.render(password_text2_hide, True, (255, 255, 255))
-          display.blit(text_surface3, (620, 190))
-          display.blit(text_surface4, (620, 240))
+          text_surface = font2.render(username_text, True, (255, 255, 255))
+          text_surface2 = font2.render(password_text_hide, True, (255, 255, 255))
+          display.blit(text_surface, (620, 190))
+          display.blit(text_surface2, (620, 240))
           display.blit(text11, (615, 170))
           display.blit(text12, (615, 220))
           display.blit(text13, (560, 145))
